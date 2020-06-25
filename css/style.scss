@@ -1,0 +1,405 @@
+// universal editor
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    scroll-behavior: smooth;
+}
+// variables
+body{
+    scroll-behavior: smooth;
+}
+// 
+// ----------------Var of header color ----------
+  
+:root {
+    --main-header-color :  rgb(226, 221, 221);
+    --youtube-color : #bd1725;
+--facebook-color : #3b5998;
+--twitter-color : #6c95ee;
+--instagram-color : #d44b62;
+}
+//-----------Google Font Importing  \/
+@import url('https://fonts.googleapis.com/css2?family=Tenali+Ramakrishna&display=swap');
+// example 1) Almost before we knew it, we had left the ground.
+// style1)      font-family: 'Tenali Ramakrishna', sans-serif;
+// // ------------------Header css _-------------------------
+// @import "tailwindcss/base";
+
+// @import "tailwindcss/components";
+
+// @import "tailwindcss/utilities";
+
+// header
+
+
+.header{
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(57deg, #00C6A7 , #1E4D92 ); 
+    // clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+    clip-path: polygon(50% 0%, 100% 0, 100% 60%, 54% 81%, 0 100%, 0% 60%, 0 0);
+    background: #0f8a9d;
+     // background-image: url('./img/%E2%80%94Pngtree%E2%80%94fresh%20vegetables%20composition%20on%20transparent_5047427.png');
+     z-index: 1;
+    //  display: flex;
+    position: relative;
+
+    .top{
+        display: flex;
+        height: 100px;
+        width: 80%;
+        margin: auto;
+        justify-content: space-between;
+
+        .logo{
+            width: 25%;
+         height: 100px;
+            // color: black;
+            a{
+                text-decoration: none;
+                color: black;
+                font-size: 28px;
+                font-weight: bold;
+                &:hover{
+                    animation: color 15s infinite linear;
+                    animation-play-state: running;
+                }
+                span{
+                    line-height: 100px;
+                }
+
+            }
+           
+        }
+        nav{
+            width: 70%;
+            height: 100px;
+            // margin: auto;
+            ul{
+                display: flex;
+                height: 100px;
+                margin: 0 auto;
+                float: right;
+                li{
+                    display: block;
+                    line-height: 100px;
+                    margin: 0px 18px;
+                    a{
+                        text-decoration: none;
+                        color: white;
+                        font-weight: bold;
+                        font-family: Arial, Helvetica, sans-serif;
+                        text-transform: uppercase;
+                        display: block;
+                        height: 100px;
+                        position: relative;
+                        transition: border-bottom 0.8s ease;
+                        &:focus{
+                            outline: none;
+                        }
+                        &:hover {
+                            border-bottom: 2px solid black;
+                            
+                        }
+            
+                    }
+                }
+            }
+        }
+        .hamburger{
+            height: 70px;
+            width: 5%;
+            float: right;
+            display: flex;
+            flex-direction: column;
+            // background: black;
+            margin: 25px 0px 4px 65px;
+            
+            span{
+                width: 35px;
+                cursor: pointer;
+                transition: 0.5s ease all;
+                &:nth-child(1){
+                    height: 5px;
+                    width: 35px;
+                    background: black;
+                    margin: 4px 0px;
+                    &:hover{
+                        width: 25px;
+                        background-color: rgb(153, 145, 129);
+                    }
+                }
+                &:nth-child(3){
+                    height: 5px;
+                    width: 35px;
+                    background: black;
+                    margin: 4px 0px;
+                    &:hover{
+                        width: 25px;
+                        background-color: rgb(153, 145, 129);
+                    }
+                }
+                &:nth-child(2){
+                    height: 5px;
+                    width: 25px;text-align: center;
+
+                    background: black;
+                    margin: 4px 2px;
+                    &:hover{
+                        width: 35px;
+                        background-color: rgb(153, 145, 129);
+                    }
+                }
+            }
+            
+        }
+    }
+    
+}
+
+@keyframes color{
+    0%{
+        color: black;
+    }
+    20%{
+        color: rgb(72, 238, 22);
+    }
+    40%{
+        color: rgb(91, 7, 226);
+    }
+    50%{
+        color: rgb(21, 236, 190);
+    }
+    60%{
+        color: rgb(68, 7, 45);
+    }
+    80%{
+        color: rgb(200, 126, 29);
+    }
+    90%{
+        color: rgb(4, 46, 85);
+    }
+    100%{
+        
+    }
+}
+
+.hamburger.cross{
+    height: 70px;
+    width: 5%;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    // background: black;
+    margin: 25px 0px 4px 65px;
+    
+    span{
+        width: 35px;
+        // position: relative;
+        cursor: pointer;
+        transition: 0.4 ease all;
+        &:nth-child(1){
+            position: absolute;
+            height: 5px;
+            width: 35px;
+            background: black;
+            transform: rotate(45deg);
+        }
+        &:nth-child(2){
+            display: none;
+        }
+        &:nth-child(3){
+            position: absolute;
+            height: 5px;
+            width: 35px;
+            background: black;
+            transform: rotate(-45deg);
+        }
+
+
+    }
+}
+
+.submenu{
+     z-index: 111111;
+    display: flex;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 150px;
+    background: whitesmoke;
+    height: 275px;
+    width: 150px;
+    transition: 0.8s all;
+    li{
+        list-style: none;
+        width: 100%;
+        height: 50px;
+        margin: 10px 0px;
+        text-align: center;
+        &:hover{
+            background: chocolate;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }
+}
+    .submenu.opensubmenu{
+        flex-direction: column;
+        position: absolute;
+        right: 150px;
+        background: whitesmoke;
+        height: 275px;
+        width: 150px;
+        display: flex;
+        
+    
+}
+
+.submenu.mediamenu{
+    display: block;
+    position: absolute;
+    right: 0px;
+    background: whitesmoke;
+    height: 275px;
+    width: 100%;
+    // display: flex;
+}
+
+.img-section{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    width: 400px;
+    height: 350px;
+    // background-image: url(../img/fruits.png);
+    z-index: 11111;
+    // border: 1px solid black;
+
+}
+
+
+.info-deco{
+//    border: 1px solid black;
+   height: 350px;
+   width: 600px;
+   position: absolute;
+   top: 25%;
+   right: 10%;
+   justify-content: center;
+   align-items: center;
+   h4{
+   text-align: center;
+   color: whitesmoke;
+   font-weight: bold;
+   margin-bottom: 15px;
+   }
+   h3{
+   color: whitesmoke;
+       text-align: center;
+       font-weight: bold;
+       margin-bottom: 15px;
+       margin-top: 70px;
+   
+    }
+    .buttons{
+        text-align: center;
+    button{
+
+        padding: 15px;
+        margin-right: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+        &:hover{
+            background:linear-gradient(to right,Yellow,Pink);
+             font-weight: bold;
+           border: 2px solid chocolate;
+        }
+    }
+}
+}
+
+
+.social-icon{
+    background: transparent;
+    width: 150px;
+    height: 450px;
+    position: absolute;
+    top: 30%;
+    right: 0;
+    ul{
+        display: block;
+        height: 450px;
+        width: 100%;
+        li{
+            display: block;
+            width: 45px;
+            height: 45px;
+            margin: 5px 0;
+            border: 1px solid black;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            a{
+                text-decoration: none;
+                display: block;
+                margin: auto 0;
+                &:hover .fa{
+                    background: var(--youtube-color);
+                }
+                i{
+                    font-size: 1.5rem;
+                    text-align: center;
+                    
+                }
+            }
+        }
+    }
+}
+
+.textsample{
+    z-index: 111111;
+    p{
+    z-index: 1111111;
+    }
+}
+// .textsample::after{
+//     content: '';
+//     height: 100%;
+//     width: 100%;
+//     background-image:url(../img/toppng.com-fruits-1152x785.png);
+//     opacity: 0.5;
+//     background-position: center;
+//     background-size: cover;
+//     position: absolute;
+//     top: 35px;
+//     // z-index: 111;
+//     display: block;
+// }
+
+
+.productsparent{
+    box-shadow: 0px 0px 1px 1px rgb(195, 189, 189);
+    &:hover{
+    box-shadow: 0px 0px 4px 2px rgb(121, 116, 116);
+
+    }
+}
+
+.product{
+    position: relative;
+    box-shadow: 0px 0px 1px 1px rgb(195, 189, 189);
+    &:hover{
+    box-shadow: 0px 0px 4px 2px rgb(121, 116, 116);
+
+    }
+}
+
+
